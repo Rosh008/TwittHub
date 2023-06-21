@@ -12,6 +12,8 @@ export const AuthContext = React.createContext();
 
 const initialState = {
   user: null,
+  userName: null,
+  profileImg: null,
   isConnected: false,
 };
 

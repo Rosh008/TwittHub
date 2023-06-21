@@ -26,7 +26,12 @@ export default function Home() {
           { oauthToken: token, tokenSec: secret },
           { merge: true }
         );
-        setAuth({ user: user.uid, isConnected: true });
+        setAuth({
+          user: user.uid,
+          userName: user.displayName,
+          profileImg: user.photoURL,
+          isConnected: true,
+        });
         // IdP data available using getAdditionalUserInfo(result)
       })
       .catch((error) => {

@@ -10,6 +10,8 @@ import {
   Stack,
   TextField,
   Typography,
+  Box,
+  Avatar,
 } from "@mui/material";
 import dayjs from "dayjs";
 import { AuthContext } from "../App";
@@ -73,6 +75,15 @@ export default function FlowLayout() {
 
   return (
     <>
+      <Box position="absolute" sx={{ top: "2rem", right: "6rem" }}>
+        <Box display="flex" alignItems="center" gap={2}>
+          <Avatar alt="profile pic" src={authDetails.profileImg} />
+          <Typography fontWeight="bold" color="white">
+            {authDetails.userName}
+          </Typography>
+        </Box>
+      </Box>
+
       {layoutState.index === 0 ? (
         <TweetInputSection
           value={layoutState.tweetData}
